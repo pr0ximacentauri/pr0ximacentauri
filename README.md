@@ -14,7 +14,7 @@
 
 <a href="https://github.com/Caniscent">
         
-| ![Caniscent github stats](https://github-readme-stats-eight-theta.vercel.app/api?username=Caniscent&show_icons=true&theme=radical&include_all_commits=true&count_private=true) | ![Caniscent GitHub Streak](https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=Caniscent&layout=compact&langs_count=10&theme=radical") |
+| ![Caniscent github stats](https://github-readme-stats-eight-theta.vercel.app/api?username=Caniscent&show_icons=true&theme=radical&include_all_commits=true&count_private=true) | ![Caniscent GitHub Streak](https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=Caniscent&layout=compact&langs_count=10&theme=radical&include_all_commits=true&count_private=true") |
 | --- | --- |
         
 </a>
