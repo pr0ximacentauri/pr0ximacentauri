@@ -19,18 +19,14 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
-        curl -H "Authorization: token $GH_TOKEN" \
-             -o stats.json \
-             "https://api.github.com/users/Caniscent"
+        # Set the username and URL for stats
+        USERNAME="Caniscent"
+        STATS_URL="https://github-readme-stats-eight-theta.vercel.app/api?username=${USERNAME}&show_icons=true&theme=radical&count_private=true&include_all_commits=true&access_token=${{ secrets.GH_TOKEN }}"
+        LANGS_URL="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=${USERNAME}&layout=compact&langs_count=10&theme=radical&count_private=true&include_all_commits=true&access_token=${{ secrets.GH_TOKEN }}"
 
-    - name: Update README
-      run: |
-        # Extract the necessary data from stats.json and replace the corresponding part in README
-        # Example of extracting a particular value and updating README
-        # You can use jq or other tools to process stats.json
-
-        # Example: if you want to update your stats image URL in README file
-        sed -i 's|https://github-readme-stats-eight-theta.vercel.app/api?username=Caniscent|https://github-readme-stats-eight-theta.vercel.app/api?username=Caniscent&access_token=$GH_TOKEN|' README.md
+        # Update the README with the dynamic stats URLs
+        sed -i "s|https://github-readme-stats-eight-theta.vercel.app/api?username=Caniscent|${STATS_URL}|" README.md
+        sed -i "s|https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=Caniscent|${LANGS_URL}|" README.md
 
     - name: Commit and push changes
       run: |
