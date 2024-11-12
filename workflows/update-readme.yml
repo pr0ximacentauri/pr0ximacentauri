@@ -1,0 +1,41 @@
+name: Update GitHub Stats
+
+on:
+  push:
+    branches:
+      - main  # or your default branch
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily, you can adjust the frequency
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Get GitHub stats
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: |
+        curl -H "Authorization: token $GH_TOKEN" \
+             -o stats.json \
+             "https://api.github.com/users/Caniscent"
+
+    - name: Update README
+      run: |
+        # Extract the necessary data from stats.json and replace the corresponding part in README
+        # Example of extracting a particular value and updating README
+        # You can use jq or other tools to process stats.json
+
+        # Example: if you want to update your stats image URL in README file
+        sed -i 's|https://github-readme-stats-eight-theta.vercel.app/api?username=Caniscent|https://github-readme-stats-eight-theta.vercel.app/api?username=Caniscent&access_token=$GH_TOKEN|' README.md
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git add README.md
+        git commit -m "Update GitHub stats"
+        git push
