@@ -9,7 +9,7 @@
 
 ## Github Analytics
 
-<a href="https://github.com/Caniscent">
+<a href="https://github.com/pr0ximacentauri">
     
 | ![pr0ximacentauri github stats](https://github-readme-stats-eight-theta.vercel.app/api?username=pr0ximacentauri&show_icons=true&theme=radical&count_private=true&include_all_commits=true) | ![pr0ximacentauri GitHub Streak](https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=pr0ximacentauri&layout=compact&langs_count=10&theme=radical&count_private=true&include_all_commits=true) |
 | --- | --- |
